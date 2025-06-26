@@ -1,10 +1,11 @@
 import { FiLogIn } from "react-icons/fi"
+import { Logo } from "../Logo"
 
 
 export const Header = () => {
     return(
         <header className="flex w-full justify-between px-8 bg-zinc-950 h-16 items-center">
-            <h1 className="font-bold text-3xl text-white">Web<strong className="text-blue-600">CRIPTO</strong></h1>
+            <Logo/>
             <div>
                 <button>
                     <FiLogIn size={25}/>

@@ -4,7 +4,7 @@ import { useState, useEffect, type FormEvent } from "react"
 import { useNavigate } from "react-router-dom";
 
 
-interface CoinsProps {
+export interface CoinsProps {
     formatPrice?: string;
     formatValueMarket?: string;  
     formatVolume:string;   
@@ -131,9 +131,9 @@ export const Home = () => {
             </div>
 
           <button 
-          className="bg-blue-500 mt-10 flex items-center justify-center p-2 rounded-md ml-20"
+          className="bg-blue-500 w-60 mt-10 flex items-center justify-center p-2 rounded-md ml-20"
           onClick={getMoreCoins}>
-            Load More
+            mais...
             </button>
         </main>
     )
