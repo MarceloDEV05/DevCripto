@@ -105,9 +105,9 @@ export const Home = () => {
                 </button>
             </form>
 
-            <div className="bg-black px-5 rounded-md p-6 flex flex-col w-full text-center gap-8  mt-20">
+            <div className="bg-black px-5 rounded-md p-6 flex flex-col w-full h-full text-center gap-8 mt-20">
                 {coins.length > 0 && coins.map((coin) => (
-                    <section key={coin.id} className="grid grid-cols-1 lg:grid-cols-3 items-center text-center justify-between border-b-2 border-gray-600">
+                    <section key={coin.id} className="grid grid-cols-1 lg:grid-cols-3 items-center text-center justify-between border-b-2 border-gray-600 p-4">
 
                         <div className="flex items-center gap-3 w-full">
                             <img src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLocaleLowerCase()}@2x.png`} alt="" className="h-10 hover:scale-110 duration-300 hover:rotate-25" />
