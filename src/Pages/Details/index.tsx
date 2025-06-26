@@ -57,14 +57,14 @@ export const Details = () => {
 
     return(
         <main className="w-full h-full px-8 justify-center mt-20">
-            <div className="bg-zinc-800 rounded-xl p-20 max-w-2xl flex m-auto">
+            <div className="bg-zinc-800 rounded-xl px-10 py-10 lg:p-20 max-w-2xl flex m-auto">
                 {detailCoin && (
-                    <section key={detailCoin.id} className="">
+                    <section key={detailCoin.id} className="flex flex-col justify-center w-full text-center items-center">
 
                     <div className="flex items-center gap-3">
-                        <img src={`https://assets.coincap.io/assets/icons/${detailCoin.symbol.toLocaleLowerCase()}@2x.png`} alt="" className="h-20 hover:scale-110 duration-300 hover:rotate-25" />
+                        <img src={`https://assets.coincap.io/assets/icons/${detailCoin.symbol.toLocaleLowerCase()}@2x.png`} alt="" className="h-12 lg:h-20 hover:scale-110 duration-300 hover:rotate-25" />
 
-                        <h1 className="text-center text-3xl">{detailCoin.name}</h1>
+                        <h1 className=" text-3xl">{detailCoin.name}</h1>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-5 text-xl">
@@ -74,19 +74,19 @@ export const Details = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-5 text-xl">
-                           <h2 className="text-center">Volume: {detailCoin.formatVolume}</h2>
+                           <h2 className="text-center flex justify-center items-center">Volume: {detailCoin.formatVolume}</h2>
 
-                        <h3 className="flex gap-3">
+                        <h3 className="flex gap-3 text-center">
                             {Number(detailCoin.changePercent24Hr) > 0 ? (
                             <div className="flex gap-2">
-                            <p>24h:</p>
+                            <p className="flex">Mudança 24h:</p>
                              <span className="text-green-500 flex items-center gap-2">{Number(detailCoin.changePercent24Hr).toFixed(2)}%
                              <FaCaretUp size={15} color="#fff" className="animate-pulse"/>
                              </span>
                               </div>
                             ) : (
                             <div className="flex gap-2">
-                            <p>24h:</p>
+                            <p className="flex">Mudança 24h:</p>
                              <span className="text-red-500 flex items-center gap-2">{Number(detailCoin.changePercent24Hr).toFixed(2)}%
                              <FaCaretDown size={15} color="#fff" className="animate-pulse"/>
                              </span>
