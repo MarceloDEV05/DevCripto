@@ -88,7 +88,7 @@ export const Home = () => {
 
 
     return(
-        <main className="w-full h-screen px-8">
+        <main className="w-full px-8 pb-10">
             <form onSubmit={searchCoin} className="flex gap-2 items-center justify-center m-auto w-100 max-w-3xl p-2 rounded bg-zinc-900 mt-6">
                 <input type="text"
                 placeholder="Ex. Bitcoin"
@@ -104,25 +104,25 @@ export const Home = () => {
 
             <div className="bg-black px-5 rounded-md p-6 flex flex-col w-full text-center gap-8  mt-20">
                 {coins.length > 0 && coins.map((coin) => (
-                    <section key={coin.id} className="grid grid-cols-3 items-center text-center justify-between border-b-2 border-gray-600">
+                    <section key={coin.id} className="grid grid-cols-1 lg:grid-cols-3 items-center text-center justify-between border-b-2 border-gray-600">
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 w-full">
                         <img src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLocaleLowerCase()}@2x.png`} alt="" className="h-10 hover:scale-110 duration-300 hover:rotate-25" />
 
-                        <h1 className="text-center">{coin.name}</h1>
+                        <h1 className="text-center text-2xl lg:text-xl">{coin.name}</h1>
                     </div>
 
-                    <div className="flex items-center justify-around gap-20">
-                          <h2 className="text-center">Preço: {coin.formatPrice}</h2>
+                    <div className="grid grid-cols-2 lg:flex items-center lg:justify-around gap-10 mt-10 lg:gap-20 lg:mt-0">
+                          <h2 className="text-center flex">Preço: {coin.formatPrice}</h2>
 
-                        <h3>Valor de Mercado: {coin.formatValueMarket}</h3>
+                        <h3 className="flex">Valor Mercado: {coin.formatValueMarket}</h3>
                     </div>
 
-                    <div className="flex items-center gap-20 justify-center">
-                           <h2>Volume: {coin.formatVolume}</h2>
+                    <div className="grid grid-cols-2 lg:flex items-center gap-10 lg:gap-20 justify-center">
+                           <h2 className="flex">Volume: {coin.formatVolume}</h2>
 
-                        <h3 className="flex gap-4">
-                            Mudança 24Hr: <span className={Number(coin.changePercent24Hr) > 0 ? 'text-green-500': 'text-red-500'}> {Number(coin.changePercent24Hr).toFixed(2)}%</span>
+                        <h3 className=" flex text-center justify-center item-center gap-4">
+                            24Hr: <span className={Number(coin.changePercent24Hr) > 0 ? 'text-green-500': 'text-red-500'}> {Number(coin.changePercent24Hr).toFixed(2)}%</span>
                         </h3>
 
                     </div>
@@ -131,7 +131,7 @@ export const Home = () => {
             </div>
 
           <button 
-          className="bg-blue-500 w-60 mt-10 flex items-center justify-center p-2 rounded-md ml-20"
+          className="bg-blue-500 w-60  mt-10 flex items-center justify-center p-2 rounded-md ml-20"
           onClick={getMoreCoins}>
             mais...
             </button>

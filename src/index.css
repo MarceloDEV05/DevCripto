@@ -3,8 +3,10 @@
 
 @import "tailwindcss";
 
+
 body{
   background-color: #08090f;
   color: white;
   font-family: poppins;
+ 
 }
