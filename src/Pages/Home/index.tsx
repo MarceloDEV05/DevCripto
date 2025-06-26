@@ -131,7 +131,7 @@ export const Home = () => {
             </div>
 
           <button 
-          className="bg-blue-500 w-60  mt-10 flex items-center justify-center p-2 rounded-md ml-20"
+          className="bg-blue-500 lg:w-60 w-full  mt-10 flex items-center justify-center p-2 rounded-md"
           onClick={getMoreCoins}>
             mais...
             </button>
