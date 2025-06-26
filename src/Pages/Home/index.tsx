@@ -88,8 +88,8 @@ export const Home = () => {
 
 
     return(
-        <main className="w-full px-8 pb-10">
-            <form onSubmit={searchCoin} className="flex gap-2 items-center justify-center m-auto w-100 max-w-3xl p-2 rounded bg-zinc-900 mt-6">
+        <main className="w-full px-4 lg:px-8 pb-10">
+            <form onSubmit={searchCoin} className="flex gap-2 items-center justify-center m-auto lg:w-100 w-full max-w-xl lg:max-w-3xl p-2 rounded bg-zinc-900 mt-6">
                 <input type="text"
                 placeholder="Ex. Bitcoin"
                 value={input}
