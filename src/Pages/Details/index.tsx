@@ -57,7 +57,7 @@ export const Details = () => {
 
     return(
         <main className="w-full h-full px-8 justify-center mt-20">
-            <div className="bg-zinc-800 rounded-xl px-10 py-10 lg:p-20 max-w-2xl flex m-auto">
+            <div className="bg-zinc-950 rounded-xl px-10 py-10 lg:p-20 max-w-2xl flex m-auto shadow-xl shadow-zinc-900">
                 {detailCoin && (
                     <section key={detailCoin.id} className="flex flex-col justify-center w-full text-center items-center">
 
