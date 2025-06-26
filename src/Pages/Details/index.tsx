@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { type CoinsProps } from "../Home"
 import { useParams, useNavigate } from "react-router-dom"
+import { FaCaretUp, FaCaretDown } from 'react-icons/fa'
 
 interface DataProps{
     data: CoinsProps
@@ -76,7 +77,21 @@ export const Details = () => {
                            <h2 className="text-center">Volume: {detailCoin.formatVolume}</h2>
 
                         <h3 className="flex gap-3">
-                            Mudança 24Hr: <span className={Number(detailCoin.changePercent24Hr) > 0 ? 'text-green-500': 'text-red-500'}> {Number(detailCoin.changePercent24Hr).toFixed(2)}%</span>
+                            {Number(detailCoin.changePercent24Hr) > 0 ? (
+                            <div className="flex gap-2">
+                            <p>24h:</p>
+                             <span className="text-green-500 flex items-center gap-2">{Number(detailCoin.changePercent24Hr).toFixed(2)}%
+                             <FaCaretUp size={15} color="#fff" className="animate-pulse"/>
+                             </span>
+                              </div>
+                            ) : (
+                            <div className="flex gap-2">
+                            <p>24h:</p>
+                             <span className="text-red-500 flex items-center gap-2">{Number(detailCoin.changePercent24Hr).toFixed(2)}%
+                             <FaCaretDown size={15} color="#fff" className="animate-pulse"/>
+                             </span>
+                              </div>
+                            )}
                         </h3>
 
                     </div>
