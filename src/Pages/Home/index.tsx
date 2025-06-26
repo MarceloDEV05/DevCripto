@@ -118,7 +118,7 @@ export const Home = () => {
                         <h3>Valor de Mercado: {coin.formatValueMarket}</h3>
                     </div>
 
-                    <div className="flex justify-around items-center gap-20 justify-center">
+                    <div className="flex items-center gap-20 justify-center">
                            <h2>Volume: {coin.formatVolume}</h2>
 
                         <h3 className="flex gap-4">
