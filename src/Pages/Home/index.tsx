@@ -1,5 +1,5 @@
 import { FiSearch } from "react-icons/fi"
-import { FaCaretUp, FaCaretDown} from 'react-icons/fa'
+import { FaCaretUp, FaCaretDown } from 'react-icons/fa'
 
 import { useState, useEffect, type FormEvent } from "react"
 import { useNavigate } from "react-router-dom";
@@ -107,42 +107,44 @@ export const Home = () => {
 
             <div className="bg-black px-5 rounded-md p-6 flex flex-col w-full h-full text-center gap-8 mt-20">
                 {coins.length > 0 && coins.map((coin) => (
-                    <section key={coin.id} className="grid grid-cols-1 lg:grid-cols-3 items-center text-center justify-between border-b-2 border-gray-600 p-4">
+                    <section key={coin.id} className="grid grid-cols-1 lg:grid-cols-3 items-center text-center justify-between border-b-2 border-gray-600 gap-5 py-3">
 
                         <div className="flex items-center gap-3 w-full">
                             <img src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLocaleLowerCase()}@2x.png`} alt="" className="h-10 hover:scale-110 duration-300 hover:rotate-25" />
 
                             <Link to={`/detail/${coin.id}`}>
-                            <h1 className="text-center text-2xl lg:text-xl">{coin.name}</h1>
+                                <h1 className="text-center text-2xl lg:text-xl">{coin.name}</h1>
                             </Link>
                         </div>
 
-                        <div className="grid grid-cols-2 lg:flex items-center lg:justify-around gap-10 mt-10 lg:gap-20 lg:mt-0">
-                            <h2 className="text-center flex">Preço: {coin.formatPrice}</h2>
+                        <div className="grid grid-cols-2 lg:flex-row items-center lg:justify-around gap-10 mt-10 lg:gap-20 lg:mt-0">
+                            
+                            <div className="text-center flex gap-2">
+                                <p>Preço:</p>
+                                <span>{coin.formatPrice}</span>
 
-                            <h3 className="flex">Valor Mercado: {coin.formatValueMarket}</h3>
+                            </div>
+
+                            <div className="flex gap-3">
+                                <p className="flex">Mercado:</p>
+                                <span>{coin.formatValueMarket}</span>
+                            </div>
                         </div>
 
                         <div className="grid grid-cols-2 lg:flex items-center gap-10 lg:gap-20 justify-center">
                             <h2 className="flex">Volume: {coin.formatVolume}</h2>
 
-                            <h3 className=" flex text-center justify-center item-center gap-4">
-                                {Number(coin.changePercent24Hr) > 0 ? (
-                                    <div className="flex gap-2">
-                                        <p>24h:</p>
-                                        <span className="text-green-500 flex items-center gap-2">{Number(coin.changePercent24Hr).toFixed(2)}%
-                                            <FaCaretUp size={15} color="#fff" className="animate-pulse" />
-                                        </span>
-                                    </div>
-                                ) : (
-                                    <div className="flex gap-2">
-                                        <p>24h:</p>
-                                        <span className="text-red-500 items-center flex gap-2">{Number(coin.changePercent24Hr).toFixed(2)}%
-                                            <FaCaretDown size={15} color="#fff" className="animate-pulse"/>
-                                        </span>
-                                    </div>
-                                )}
-                            </h3>
+                            <div className="flex justify-between gap-2">
+                                <p className="font-medium">24h:</p>
+                                <span className={Number(coin.changePercent24Hr) > 0 ? 'text-green-500' : 'text-red-500'}>
+                                    {Number(coin.changePercent24Hr).toFixed(2)}%
+                                    {Number(coin.changePercent24Hr) > 0 ? (
+                                        <FaCaretUp size={15} className="inline animate-pulse ml-1"/>
+                                    ) : (
+                                        <FaCaretDown size={15} className="inline animate-pulse ml-1" />
+                                    )}
+                                </span>
+                            </div>
 
                         </div>
                     </section>
